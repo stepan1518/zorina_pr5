@@ -1,3 +1,12 @@
+/* ИМЯ: Степан Григорьев КВБО-07-22 22К0476 */
+/* СРОК : 02/11/2024 */
+/* НАЗНАЧЕНИЕ ПРОГРАММЫ Поиск количества простых чисел и минимального числа массива */
+/* ИМЯ ФАЙЛА: 3.c */
+/*
+Программа на C считывает количество чисел и сами числа, затем определяет,
+сколько из них являются простыми, а также находит минимальное число среди введенных.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,6 +39,7 @@ int main() {
     return 0;
 }
 
+//Основная функция поиска (работает через решето Эратосфена)
 int simple_count(int* nums, size_t size, int* min_num) {
     *min_num = nums[0];
     int max_num = nums[0], *simple_nums, count = 0;
@@ -60,11 +70,13 @@ int simple_count(int* nums, size_t size, int* min_num) {
     return count;
 }
 
+//Максимум двух чисел
 int max(int first, int second) {
     if (first > second) return first;
     return second;
 }
 
+//Минимум двух чисел
 int min(int first, int second) {
     if (first < second) return first;
     return second;
